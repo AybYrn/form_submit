@@ -9,14 +9,13 @@ h1 {
   font-size: 1.5rem;
   text-align: center;
   color: rgb(173, 131, 131);
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  margin-top: 1.5rem;
 }
-.form--container {
+form {
   width: 300px;
   height: 500px;
   display: flex;
-  align-items: center;
   flex-wrap: nowrap;
   flex-direction: column;
   /* box shadow */
@@ -29,30 +28,75 @@ h1 {
   background: #fff;
   /* position */
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-input {
+input[type="text"] {
   width: 250px;
-  height: 20px;
+  height: 30px;
   /* background */
   background: #fff;
   margin-top: 10px;
-}
-
-input[type="text"] {
+  margin-left: 20px;
+  padding: 5px;
   border: none;
   border-bottom: 2px solid rgba(1, 244, 224, 0.721);
 }
 
-input:focus {
+input[type="text"]:focus {
   outline: 3px solid transparent;
   border-bottom: 2px solid rgba(1, 244, 224, 0.721);
 }
 
+textarea {
+  width: 250px;
+  height: 100px;
+  /* background */
+  background: #fff;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.smoke{
+  width: 250px;
+  height: 30px;
+  /* background */
+  background: #fff;
+  margin-top: 10px;
+  margin-left: 15px;
+  padding: 5px;
+  border: none;
+}
+
 input[type="checkbox"] {
-  height: 25px;
-  width: 25px;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  bottom: 1px;
+}
+
+input[type="radio"] {
+  border: 2px solid #311b92;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+fieldset{
+  border-color: rgba(1, 244, 224, 0.721);
+  width: 250px;
+  margin: 10px auto;
+}
+
+fieldset input, fieldset label{
+  margin-left: 5px;
+  vertical-align: middle;
+  position: relative;
+  bottom: 1px;
 }
