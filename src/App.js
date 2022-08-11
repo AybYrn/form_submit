@@ -9,11 +9,11 @@ function App() {
     info: "",
     smoking: true,
     employment: "",
+    color: "",
   });
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
-    console.log(name, value, type, checked);
     setFormData((prevData) => {
       return {
         ...prevData,
@@ -21,11 +21,16 @@ function App() {
       };
     });
   }
-  console.log(formData);
+
+  function handleSubmit(event){
+    event.preventDefault()
+    console.log(formData)
+  }
+  
   return (
     <div className="form--container">
+      <form onSubmit={handleSubmit}>
       <h1>Submission Form</h1>
-      <form>
         <input
           type="text"
           name="firstName"
@@ -95,6 +100,23 @@ function App() {
           />
           <label htmlFor="fullTime">Full-Time</label>
         </fieldset>
+        <label htmlFor="favcolor" className="color">
+          Whats Your Favourite Color ?
+        </label>
+        <select
+          id="favcolor"
+          value={formData.color}
+          name="color"
+          onChange={handleChange}
+        >
+          <option value="">---Choose---</option>
+          <option value="red">Red</option>
+          <option value="cyan">Cyan</option>
+          <option value="green">Green</option>
+          <option value="purple">Purple</option>
+          <option value="black">Black</option>
+        </select>
+        <button>Submit</button>
       </form>
     </div>
   );

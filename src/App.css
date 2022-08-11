@@ -3,23 +3,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: midnightblue;
   font-family: "Montserrat", sans-serif;
 }
 h1 {
   font-size: 1.5rem;
   text-align: center;
-  color: rgb(173, 131, 131);
-  margin-bottom: 0.8rem;
-  margin-top: 1.5rem;
+  color: rgb(255, 50, 231);
+  /* make text shadow */
+  text-shadow: 8px -1px 19px rgb(249, 184, 234);
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 form {
   width: 300px;
-  height: 500px;
+  height: 550px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   /* box shadow */
-  box-shadow: 0px 0px 10px rgba(152, 138, 255, 0.5);
+  box-shadow: 5px 5px 10px 0px rgba(152, 138, 255, 0.5);
   /* border */
   border: 1px solid rgb(195, 241, 255);
   /* border-radius */
@@ -31,6 +34,15 @@ form {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+form:hover {
+  background: rgb(255, 255, 255);
+  border-radius: 0.4em;
+  box-shadow: 0.3em 0.3em 0.7em #00000015;
+  transition: border 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(152, 138, 255, 0.5) 0.2em solid;
 }
 
 input[type="text"] {
@@ -42,7 +54,14 @@ input[type="text"] {
   margin-left: 20px;
   padding: 5px;
   border: none;
-  border-bottom: 2px solid rgba(1, 244, 224, 0.721);
+  border-bottom: 2px solid #43e3ff;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+  outline: none;
+  padding: 8px 9px;
+  border-color: #66a8f9;
 }
 
 input[type="text"]:focus {
@@ -60,7 +79,7 @@ textarea {
   padding: 5px;
 }
 
-.smoke{
+.smoke {
   width: 250px;
   height: 30px;
   /* background */
@@ -82,21 +101,67 @@ input[type="checkbox"] {
 }
 
 input[type="radio"] {
-  border: 2px solid #311b92;
+  border: 2px solid #43e3ff;
   height: 15px;
   width: 15px;
   border-radius: 50%;
 }
 
-fieldset{
-  border-color: rgba(1, 244, 224, 0.721);
+fieldset {
+  border-color: #43e3ff;
   width: 250px;
   margin: 10px auto;
 }
 
-fieldset input, fieldset label{
+fieldset input,
+fieldset label {
   margin-left: 5px;
   vertical-align: middle;
   position: relative;
   bottom: 1px;
+}
+
+select,
+select:focus {
+  width: 250px;
+  height: 30px;
+  /* background */
+  background: #fff;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 5px;
+  outline: 3px solid transparent;
+  border: none;
+  border-bottom: 2px solid #43e3ff;
+}
+
+.color {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+button {
+  background-image: linear-gradient(120deg, #ff56c1, #43e3ff);
+  opacity: 0.6;
+  transition: 1s;
+  color: #fff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 8px 16px;
+  border: none;
+  width: 100px;
+  cursor: pointer;
+
+  position: relative;
+  top: 0;
+  transition: top ease 0.1s;
+}
+
+button:hover {
+  opacity: 1;
+  background-image: linear-gradient(120deg, #43e3ff, #ff56c1);
+  top: -2px;
 }
